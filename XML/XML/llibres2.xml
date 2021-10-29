@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<canciones>
+    <id id="1">
+        <titol>After</titol>
+        <autor>Anna Todd</autor>
+        <any_de_publicacio>2018</any_de_publicacio>
+        <editorial>Booket</editorial>
+        <nombre_de_pagines>592</nombre_de_pagines>
+    </id>
+    <id id="2">
+        <titol>Harry Potter y las reliquias de la muerte</titol>
+        <autor>J.K Rowling</autor>
+        <any_de_publicacio>2007</any_de_publicacio>
+        <editorial>Salamandra</editorial>
+        <nombre_de_pagines>640</nombre_de_pagines>
+    </id>
+    <id id="3">
+        <titol>Percy jackson y el ladrón del rayo </titol>
+        <autor>Rick Riordan</autor>
+        <any_de_publicacio>2014</any_de_publicacio>
+        <editorial>Salamandra</editorial>
+        <nombre_de_pagines>288</nombre_de_pagines>
+    </id>
+    <id id="4">
+        <titol>Eragon</titol>
+        <autor>Christopher Paolini</autor>
+        <any_de_publicacio>2002</any_de_publicacio>
+        <editorial>RocaBolsillo</editorial>
+        <nombre_de_pagines>544</nombre_de_pagines>
+    </id>
+    <id id="5">
+        <titol>La isla del tesoro</titol>
+        <autor>Robert L. Stevenson</autor>
+        <any_de_publicacio>1883</any_de_publicacio>
+        <editorial>Ecos</editorial>
+        <nombre_de_pagines>283</nombre_de_pagines>
+    </id>
+    <id id="6">
+        <titol>50 Sombras de Grey</titol>
+        <autor>E.L Jaames</autor>
+        <any_de_publicacio>2015</any_de_publicacio>
+        <editorial>Random House Espanol</editorial>
+        <nombre_de_pagines>544</nombre_de_pagines>
+    </id>
+</canciones>

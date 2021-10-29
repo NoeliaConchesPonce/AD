@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<llibres>
+    <llibre id="1">
+        <titol>After</titol>
+        <autor>Anna Todd</autor>
+        <any_de_publicacio>2018</any_de_publicacio>
+        <editorial>Booket</editorial>
+        <nombre_de_pagines>592</nombre_de_pagines>
+    </llibre>
+    <llibre id="2">
+        <titol>noe</titol>
+        <autor>Noelia</autor>
+        <any_de_publicacio>2034</any_de_publicacio>
+        <editorial>reto</editorial>
+        <nombre_de_pagines>544</nombre_de_pagines>
+    </llibre>
+    <llibre id="3">
+        <titol>Eragon</titol>
+        <autor>Christopher Paolini</autor>
+        <any_de_publicacio>2002</any_de_publicacio>
+        <editorial>RocaBolsillo</editorial>
+        <nombre_de_pagines>544</nombre_de_pagines>
+    </llibre>
+    <llibre id="4">
+        <titol>La isla del tesoro</titol>
+        <autor>Robert L. Stevenson</autor>
+        <any_de_publicacio>1883</any_de_publicacio>
+        <editorial>Ecos</editorial>
+        <nombre_de_pagines>283</nombre_de_pagines>
+    </llibre>
+    <llibre id="5">
+        <titol>50 Sombras de Grey</titol>
+        <autor>E.L Jaames</autor>
+        <any_de_publicacio>2015</any_de_publicacio>
+        <editorial>Random House Espanol</editorial>
+        <nombre_de_pagines>544</nombre_de_pagines>
+    </llibre>
+    <llibre id="6">
+        <titol>noelia</titol>
+        <autor>nestor</autor>
+        <any_de_publicacio>2021</any_de_publicacio>
+        <editorial>sandrata</editorial>
+        <nombre_de_pagines>233</nombre_de_pagines>
+    </llibre>
+    <llibre id="7">
+        <titol>noelia</titol>
+        <autor>nestor</autor>
+        <any_de_publicacio>2021</any_de_publicacio>
+        <editorial>sandrata</editorial>
+        <nombre_de_pagines>233</nombre_de_pagines>
+    </llibre>
+    <llibre id="8">
+        <titol>noeli</titol>
+        <autor>NOE</autor>
+        <any_de_publicacio>20221</any_de_publicacio>
+        <editorial>a,hdvb</editorial>
+        <nombre_de_pagines>7788</nombre_de_pagines>
+    </llibre>
+    <llibre id="9">
+        <titol>noelia</titol>
+        <autor>noe</autor>
+        <any_de_publicacio>2021</any_de_publicacio>
+        <editorial>gato</editorial>
+        <nombre_de_pagines>223</nombre_de_pagines>
+    </llibre>
+</llibres>

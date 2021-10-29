@@ -1,0 +1,33 @@
+<?xml version = "1.0" encoding="UTF-8" standalone="no" ?>
+<moviles>
+    <movil id="1">
+        <marca>Samsung</marca>
+        <modelo>Galaxy S21</modelo>
+        <RAM>4 GB</RAM>
+        <sistema>Android 11.2</sistema>
+    </movil>
+    <movil id="2">
+        <marca>Samsung</marca>
+        <modelo>Galaxy Note 10</modelo>
+        <RAM>2 GB</RAM>
+        <sistema>Android 10.2</sistema>
+    </movil>
+    <movil id="3">
+        <marca>Iphone</marca>
+        <modelo>13 pro</modelo>
+        <RAM>6 GB</RAM>
+        <sistema>IOS 14</sistema>
+    </movil>
+    <movil id="4">
+        <marca>Iphone</marca>
+        <modelo>11</modelo>
+        <RAM>2 GB</RAM>
+        <sistema>IOS 15</sistema>
+    </movil>
+    <movil id="5">
+        <marca>Xiaomi</marca>
+        <modelo>Redmi Note 9</modelo>
+        <RAM>2 GB</RAM>
+        <sistema>Android 11.2</sistema>
+    </movil>
+</moviles>
