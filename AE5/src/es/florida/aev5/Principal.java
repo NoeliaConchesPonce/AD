@@ -10,17 +10,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
-import org.w3c.dom.*;
-
 import es.florida.ae5.Llibre;
-
-import javax.xml.parsers.*;
-import javax.xml.transform.OutputKeys;
-import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerException;
-import javax.xml.transform.TransformerFactory;
-import javax.xml.transform.dom.DOMSource;
-import javax.xml.transform.stream.StreamResult;
 
 import java.io.*;
 
@@ -40,15 +30,17 @@ public class Principal {
 				configuration.addClass(Llibre.class);
 				ServiceRegistry registry= new StandardServiceRegistryBuilder().applySettings(configuration.getProperties()).build();
 				SessionFactory sessionFactory= configuration.buildSessionFactory(registry);
+				
 				// Obri una nova sessióde la sessionfactory
 				Session session= sessionFactory.openSession();
 				session.beginTransaction();
-				session.getTransaction().commit();
+				
 		do {
 			System.out.println("Opcions: " + "\n1. Mostrar els titols dels llibres"
 					+ "\n2. Mostrar informacio d'un llibre" + "\n3. Crear un nou llibre" + "\n4. Actualitzar un  llibre"
 					+ "\n5. Borrar un llibre" + "\n6. Tancar la biblioteca");
 
+			@SuppressWarnings("resource")
 			Scanner sc = new Scanner(System.in);
 			String resposta = sc.nextLine();
 			switch (resposta) {
@@ -61,7 +53,7 @@ public class Principal {
 			}
 			case "2": {
 				System.out.println("Introdueix la id del llibre: ");
-				mostrarLlibre(recuperarLlibre(Integer.parseInt(sc.nextLine()), session));
+				mostrarLlibre(recuperarLlibre(Integer.parseInt(sc.nextLine()), session), session);
 
 				break;
 			}
@@ -95,9 +87,13 @@ public class Principal {
 			System.out.println("<Pressiona ENTER per a continuar>");
 
 			sc.nextLine();
+			
+			session.getTransaction().commit();
 
 		} while (true);
 	}
+	
+	
 
 	/*
 	 * M�tode: llegirLlibres
@@ -105,9 +101,10 @@ public class Principal {
 	 * Par�metre d'entrada: no
 	 * Par�metre d'eixida: llibres
 	 * */
+	@SuppressWarnings("unchecked")
 	public static List<Llibre> llegirLlibres(Session session) {
 		/* lista que almacena los libros del xml */
-		
+		session.beginTransaction();
 
 		List <Llibre> listaLlibres= new ArrayList <Llibre>();
 		listaLlibres= session.createQuery("FROM Llibre").list() ;
@@ -126,7 +123,10 @@ public class Principal {
 	 * 
 	 * */
 	
-	public static void mostrarLlibre(Llibre llibre) {
+	public static void mostrarLlibre(Llibre llibre, Session session) {
+		
+		session.beginTransaction();
+		
 		System.out.println(llibre.getIdentificador());
 		System.out.println(llibre.getTitol());
 		System.out.println(llibre.getAutor());
@@ -134,6 +134,8 @@ public class Principal {
 		System.out.println(llibre.getAnyNaixement());
 		System.out.println(llibre.getEditorial());
 		System.out.println(llibre.getNombrePagines());
+		
+		session.getTransaction().commit();
 
 	}
 	
@@ -146,7 +148,14 @@ public class Principal {
 	 * */
 
 	public static void crearLlibre(Session session) {
+		
+
+	session.beginTransaction();
+				
+				
+		@SuppressWarnings("resource")
 		Scanner sc = new Scanner(System.in);
+		@SuppressWarnings("unused")
 		String nouLlibre = sc.nextLine();
 		System.out.println("Introdueix el titol del nou llibre: ");
 		String nouTitol = sc.nextLine();
@@ -162,8 +171,12 @@ public class Principal {
 		int nouNombrePagines = Integer.parseInt(sc.nextLine());
 		
 		Llibre lli= new Llibre(nouTitol, nouAutor, nouAnyNaixement, nouAnyPublicacio, novaEditorial, nouNombrePagines);
+		@SuppressWarnings("unused")
 		Serializable id= session.save(lli);
+		
+		//commit 
 		session.getTransaction().commit();
+
 	}
 
 	/*
@@ -175,10 +188,13 @@ public class Principal {
 	 * */
 	
 	public static Llibre recuperarLlibre(int id, Session session) {
-
+		
+		session.beginTransaction();
+		
 		Llibre llib= (Llibre) session.get(Llibre.class, id);
 
 		return llib;
+
 		
 		
 
@@ -193,10 +209,16 @@ public class Principal {
 	 * */
 	
 	public static void actualitzarLlibre(int id, Session session) {
+		
+		session.beginTransaction();
+		
 		Llibre llibr= (Llibre) session.load(Llibre.class, id);
 		llibr.setAnyPublicacio(2010);
 		llibr.setEditorial("Planeta");
 		session.update(llibr);
+		
+		//commit y tanque sessio
+		session.getTransaction().commit();
 	}
 	
 	/*
@@ -208,9 +230,14 @@ public class Principal {
 	 * */
 	
 	public static void borrarLlibre(int id, Session session) {
+		
+		session.beginTransaction();
+		
 		Llibre llibreBorrar= new Llibre();
 		llibreBorrar.setIdentificador(id);
 		session.delete(llibreBorrar);
+		
+		session.getTransaction().commit();
 		
 		
 		

@@ -24,10 +24,12 @@ public class Principal {
 		
 		//Llegir un objecte
 		//Recuperarun objectea partirdel seuid
+		@SuppressWarnings("unused")
 		Llibre llibre1 = (Llibre) session.get(Llibre.class, 23);
 		
 		//Crear nou objecte
 		Llibre lli= new Llibre("Una sala llena de corazones rotos", "Anne Tyler", 1941, 2021, "Lumen", 200) ;
+		@SuppressWarnings("unused")
 		Serializable id= session.save(lli);
 		
 		// Actualitza la información d’un objecte donat el seu id
