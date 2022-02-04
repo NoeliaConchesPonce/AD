@@ -1,0 +1,8 @@
+body {
+    background-color: rgb(117, 197, 135); /* Color de fondo */
+}
+
+form {
+   margin: 0 auto; /* Centramos el formulario */
+   width: 300px;   /* Sin ancho no podemos centrar el formulario */
+}

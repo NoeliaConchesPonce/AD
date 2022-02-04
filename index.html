@@ -1,0 +1,27 @@
+<!-- parte visual -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"> </script>
+    <script src="./main.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+</head>
+<body>
+    <h1>Amiibos de Nintendo</h1>
+    <h2 id="amiiboSeries"></h2>
+    <h2 id="gameSeries"></h2>
+    <p id = "foto"></p>
+    <p id="releaseEu"></p>
+    <input id="nombre" type ="text" value="">
+    <button id="submit" onClick="getGroupInfo()">Extrae informacion de la Api</button>
+    <button id="save" onClick="guardarDatos()">Guardar Datos en BBDD</button>
+</body>
+
+</html>
